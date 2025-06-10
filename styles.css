@@ -1,0 +1,343 @@
+       body {
+         margin: 0;
+         padding: 0;
+         font-family: 'Figtree', sans-serif;
+         font-weight: 600;
+         background-color: #161a47;
+       }
+
+       .btn-contact {
+         position: relative;
+         display: inline-flex;
+         align-items: center;
+         gap: 0.3rem;
+         font-weight: 700;
+         font-size: 0.85rem;
+         color: #161a47;
+         background-color: #ffffff;
+         border: none;
+         /* no border initially */
+         border-radius: 9999px;
+         /* stadium shape */
+         padding: 0.5rem 1.5rem;
+         cursor: pointer;
+         overflow: hidden;
+         user-select: none;
+         transition:
+           color 0.3s ease,
+           background-color 0.3s ease,
+           box-shadow 0.3s ease,
+           transform 0.2s ease,
+           border 0.3s ease;
+         text-decoration: none;
+         /* if using <a> tag */
+       }
+
+       .btn-contact::before {
+         content: "";
+         position: absolute;
+         bottom: -100%;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background-color: #161a47;
+         border-radius: 9999px;
+         transition: bottom 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+         z-index: 0;
+       }
+
+       .btn-contact:hover::before,
+       .btn-contact:focus::before {
+         bottom: 0;
+       }
+
+       .btn-contact>span,
+       .btn-contact svg {
+         position: relative;
+         z-index: 1;
+         transition: color 0.3s ease;
+         color: #161a47;
+       }
+
+       .btn-contact:hover>span,
+       .btn-contact:focus>span {
+         color: #ffffff;
+       }
+
+       .btn-contact svg {
+         width: 1em;
+         height: 1em;
+         stroke: #161a47;
+         stroke-width: 1;
+         stroke-linecap: round;
+         stroke-linejoin: round;
+         transition: stroke 0.3s ease;
+       }
+
+       .btn-contact:hover svg,
+       .btn-contact:focus svg {
+         stroke: #ffffff;
+       }
+
+       .btn-contact:hover,
+       .btn-contact:focus {
+         border: 2px solid #ffffff;
+         transform: scale(1.05);
+         box-shadow: 0 6px 12px rgba(22, 26, 79, 0.3);
+         outline: none;
+       }
+
+       .btn-contact:focus-visible {
+         outline: 3px solid #2563eb;
+         outline-offset: 3px;
+       }
+
+
+       .hero-section {
+         background-color: #ffffff;
+         background-image: url(./img/bihhahh.png);
+         padding: 80px 20px;
+         text-align: center;
+       }
+
+       .hero-title {
+         font-size: 2.5rem;
+         font-weight: 500;
+         color: #212529;
+         margin-bottom: 30px;
+       }
+
+       .hero-subtitle {
+         font-size: 1.2rem;
+         color: #495057;
+         margin-bottom: 40px;
+         line-height: 1.6;
+       }
+
+       .divider {
+         height: 2px;
+         background-color: #e9ecef;
+         width: 80%;
+         margin: 40px auto;
+       }
+
+       .cta-button {
+         background-color: #007bff;
+         color: white;
+         border: none;
+         padding: 12px 30px;
+         font-size: 1rem;
+         border-radius: 4px;
+         cursor: pointer;
+         transition: background-color 0.3s;
+         text-transform: uppercase;
+         letter-spacing: 1px;
+         font-weight: 500;
+       }
+
+       .cta-button:hover {
+         background-color: #0069d9;
+       }
+
+       .trusted-by {
+         text-align: center;
+         margin-top: 60px;
+         color: #6c757d;
+         font-size: 0.9rem;
+         text-transform: uppercase;
+         letter-spacing: 1px;
+         margin-bottom: 20px;
+       }
+
+       .client-logos {
+         display: flex;
+         justify-content: center;
+         flex-wrap: wrap;
+         gap: 30px;
+         padding: 0 20px;
+       }
+
+       .client-logo {
+         font-size: 1.2rem;
+         font-weight: 500;
+         color: #ffffff;
+       }
+
+       nav {
+         text-align: center;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+         padding: 15px 0;
+       }
+
+       nav {
+         text-align: center;
+         /* Aligns the navigation links to center */
+       }
+
+       nav ul {
+         list-style-type: none;
+         /* Removes bullet points */
+         padding: 1.6px 0px;
+         font-family: 'Figtree', sans-serif;
+         font-weight: 600;
+
+         margin: 0;
+         /* Removes margin */
+         display: inline-block;
+         /* Enables centering */
+       }
+
+       nav ul li {
+         display: inline;
+         /* Aligns list items in a row */
+         margin: 0 20px;
+         /* Spacing between links */
+         align-items: center;
+       }
+
+       .dropdown {
+         display: inline-block;
+         /* Necessary for dropdown functionality */
+         position: relative;
+         /* Positions dropdown properly */
+         font-weight: 400;
+
+         color: #FC747B;
+       }
+
+       .dropdown-content {
+         display: none;
+         /* Hides dropdown by default */
+         position: absolute;
+         /* Positions dropdown relative to its parent */
+         background-color: #3b3b3b;
+         /* Dropdown background */
+         min-width: 160px;
+         /* Minimum width of dropdown */
+         box-shadow: 0px 8px 16px 0px rgba(172, 74, 74, 0.2);
+         /* Adds shadow to dropdown */
+         z-index: 1;
+         /* Ensures dropdown is on top */
+       }
+
+       .dropdown:hover .dropdown-content {
+         display: block;
+         /* Shows dropdown on hover */
+       }
+
+       .dropdown-content a {
+         color: #ffffff;
+         /* Text color in dropdown */
+         padding: 12px 16px;
+         /* Padding inside dropdown links */
+         text-decoration: none;
+         /* Removes underline */
+         display: block;
+         /* Makes the whole area clickable */
+       }
+
+       .dropdown-content a:hover {
+         background-color: #FC747B;
+         /* Highlight effect on dropdown items */
+       }
+
+
+       .nav-link {
+         color: #f9fafc;
+         font-weight: 500;
+         margin: 0 15px;
+
+       }
+
+       .nav-link:hover {
+         color: #FC747B;
+       }
+
+
+
+       button.tell-me-more {
+         position: relative;
+         display: inline-flex;
+         align-items: center;
+         gap: 0.5rem;
+         font-weight: 700;
+         font-size: 1rem;
+         color: #161a47;
+         background-color: #ffffff;
+         border: none;
+         /* No border initially */
+         border-radius: 9999px;
+         /* Stadium shape */
+         padding: 0.75rem 2rem;
+         cursor: pointer;
+         overflow: hidden;
+         user-select: none;
+         transition:
+           color 0.3s ease,
+           background-color 0.3s ease,
+           box-shadow 0.3s ease,
+           transform 0.2s ease,
+           border 0.3s ease;
+       }
+
+       /* Sliding upward background - matches hover background */
+       button.tell-me-more::before {
+         content: "";
+         position: absolute;
+         bottom: -100%;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background-color: #161a47;
+         border-radius: 9999px;
+         transition: bottom 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+         z-index: 0;
+       }
+
+       button.tell-me-more:hover::before,
+       button.tell-me-more:focus::before {
+         bottom: 0;
+       }
+
+       /* Text and arrow stay above sliding background */
+       button.tell-me-more>span,
+       button.tell-me-more svg {
+         position: relative;
+         z-index: 1;
+         transition: color 0.3s ease;
+         color: #161a47;
+       }
+
+       /* Arrow icon styling */
+       button.tell-me-more svg {
+         width: 1.3em;
+         height: 1.3em;
+         stroke: #161a47;
+         stroke-width: 1.2;
+         stroke-linecap: round;
+         stroke-linejoin: round;
+       }
+
+       /* Hover/focus: text and arrow become white, border appears */
+       button.tell-me-more:hover>span,
+       button.tell-me-more:focus>span {
+         color: #ffffff;
+       }
+
+       button.tell-me-more:hover svg,
+       button.tell-me-more:focus svg {
+         stroke: #ffffff;
+       }
+
+       button.tell-me-more:hover,
+       button.tell-me-more:focus {
+         border: 2px solid #ffffff;
+         transform: scale(1.05);
+         box-shadow: 0 6px 12px rgba(22, 26, 79, 0.3);
+         outline: none;
+       }
+
+       button.tell-me-more:focus-visible {
+         outline: 3px solid #2563eb;
+         outline-offset: 3px;
+       }

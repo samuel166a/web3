@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What we do | The Hybrid Way</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Figtree', sans-serif;
+      font-weight: 600;
+      color: #111;
+
+    }
+
+    .hero {
+      padding: 4rem 2rem;
+      text-align: left;
+      background: #fff;
+      background-image: url(./img/img8.png);
+    }
+
+    .hero h1 {
+      font-size: 4.0rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #444;
+    }
+
+    .section {
+      padding: 3rem 2rem;
+      background: #f9f9f9;
+    }
+
+    .section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    footer {
+      padding: 2rem;
+      text-align: center;
+      background-color: #0D0F3C;
+      color: white;
+      font-size: 0.9rem;
+    }
+
+
+    /* Reset and base */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    .form-container {
+      max-width: 420px;
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
+      border-radius: 0.75rem;
+      /* consistent card rounding */
+      padding: 2rem 2.5rem;
+      color: #374151;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    label {
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.35rem;
+      color: #4b5563;
+    }
+
+    label .required-text {
+      font-weight: 400;
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-left: 0.4rem;
+    }
+
+    label .required-dot {
+      color: #ef4444;
+      font-size: 1.2rem;
+      line-height: 0;
+      margin-left: 0.4rem;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      font-size: 1rem;
+      padding: 0.85rem 1.3rem;
+      border: 1.5px solid #d1d5db;
+      border-radius: 9999px;
+      /* stadium shape */
+      background-color: #f9fafb;
+      color: #111827;
+      font-weight: 500;
+      font-family: inherit;
+      transition:
+        border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: inset 0 1px 2px rgb(0 0 0 / 0.05);
+    }
+
+    input[type="text"]::placeholder,
+    input[type="email"]::placeholder {
+      color: #9ca3af;
+      text-shadow: 0 1px 0 rgba(255 255 255 / 0.7);
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus {
+      outline: none;
+      border-color: #fb7185;
+      box-shadow: 0 0 6px 2px rgb(251 113 133 / 0.3);
+      background-color: #fff;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 140px;
+      resize: vertical;
+      line-height: 1.5;
+      font-size: 1rem;
+      padding: 0.85rem 1.3rem;
+      border: 1.5px solid #d1d5db;
+      border-radius: 1.25rem;
+      /* more curved edges for message box */
+      background-color: #f9fafb;
+      color: #111827;
+      font-weight: 500;
+      font-family: inherit;
+      transition:
+        border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: inset 0 1px 2px rgb(0 0 0 / 0.05);
+    }
+
+    textarea::placeholder {
+      color: #9ca3af;
+      text-shadow: 0 1px 0 rgba(255 255 255 / 0.7);
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: #fb7185;
+      box-shadow: 0 0 6px 2px rgb(251 113 133 / 0.3);
+      background-color: #fff;
+    }
+
+    .submit-button {
+      align-self: flex-end;
+      background-color: #fb7185;
+      border: none;
+      color: white;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 0.85rem 2.4rem;
+      border-radius: 9999px;
+      /* stadium shape */
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      user-select: none;
+      font-family: inherit;
+      text-transform: lowercase;
+      letter-spacing: 0.02em;
+      box-shadow: 0 2px 8px rgb(251 113 133 / 0.35);
+    }
+
+    .submit-button:hover,
+    .submit-button:focus-visible {
+      background-color: #f43f5e;
+      outline-offset: 3px;
+      outline: 3px solid #fbb6ce;
+      box-shadow: 0 4px 16px rgb(244 63 94 / 0.6);
+    }
+
+    .submit-button:focus {
+      outline: none;
+    }
+
+    .submit-button svg {
+      stroke: white;
+      stroke-width: 2;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+      width: 18px;
+      height: 18px;
+      transform: translateX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .submit-button:hover svg {
+      transform: translateX(5px);
+    }
+
+    .error-message {
+      color: #dc2626;
+      font-size: 0.85rem;
+      margin-top: 0.25rem;
+      min-height: 1.2em;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="hero">
+    <h1>get in touch</h1>
+    <h2>Lets talk business!</h2>
+
+  </section>
+
+
+  <section class="section">
+    <h2>Our mission: help build outstanding work cultures driven by empowering leaders.</h2>
+    <p>
+      We ask so much of our leaders. We expect them to be empathetic, inclusive, transparent, engaging both online and
+      in person. We want them to be courageous, confident, inspiring, kind. Yet, they still exist to manage resources
+      and deliver results.
+
+      Being a leader is a game of paradoxes. You need to keep everyone engaged while dealing with hairy scenarios. Yet,
+      few receive adequate training for the lose-lose situations they will inevitably encounter.
+    </p>
+    
+
+  </section>
+
+
+
+
+  <footer>
+    &copy; 2025 The Hybrid Way. All rights reserved.
+  </footer>
+  <script>
+    const form = document.getElementById("contactForm");
+
+    const errors = {
+      name: "",
+      email: "",
+      company: ""
+    };
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      // Clear previous errors
+      for (const key in errors) {
+        errors[key] = "";
+        document.getElementById(key + "Error").textContent = "";
+      }
+
+      let hasError = false;
+
+      // Validate name (required)
+      const nameInput = form.name;
+      if (!nameInput.value.trim()) {
+        errors.name = "Name is required.";
+        hasError = true;
+      }
+
+      // Validate email (required and format)
+      const emailInput = form.email;
+      if (!emailInput.value.trim()) {
+        errors.email = "Email is required.";
+        hasError = true;
+      } else if (!validateEmail(emailInput.value.trim())) {
+        errors.email = "Invalid email format.";
+        hasError = true;
+      }
+
+      Object.entries(errors).forEach(([key, message]) => {
+        if (message) {
+          document.getElementById(key + "Error").textContent = message;
+        }
+      });
+
+      if (!hasError) {
+        alert("Form submitted successfully!");
+        form.reset();
+      }
+    });
+
+    function validateEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+  </script>
+
+</body>
+
+</html>

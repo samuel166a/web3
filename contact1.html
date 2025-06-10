@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book a Consultation with our Experts | The Hybrid Way</title>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@600&display=swap" rel="stylesheet" />
+  <style>
+    /* Base reset and styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Figtree', sans-serif;
+      font-weight: 600;
+      color: #111;
+      background-color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-image: url(./img/img8.png);
+    }
+    .main-content {
+      padding: 40px 20px;
+      flex: 1;
+    }
+    /* Container with max width and horizontal layout */
+    .section {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 420px; /* left side flexible, right side fixed form width */
+      column-gap: 3rem;
+      align-items: start;
+    }
+    /* Left text content */
+    .text-content {
+      /* large bold heading and descriptive paragraph */
+      color: #111827;
+    }
+    .text-content h2 {
+      font-size: 2.5rem;
+      margin: 0 0 1rem 0;
+      font-weight: 700;
+    }
+    .text-content p {
+      font-size: 1.125rem;
+      line-height: 1.6;
+      color: #4b5563;
+      max-width: 600px;
+    }
+    /* Right side form container - small rectangle */
+    .form-container {
+      background: #fff;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
+      padding: 2rem 2.5rem;
+      width: 420px;
+      /* Align right by virtue of grid column 2 */
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+    label {
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+      color: #4b5563;
+      display: inline-block;
+    }
+    label .required-text {
+      font-weight: 400;
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-left: 0.4rem;
+    }
+    label .required-dot {
+      color: #ef4444;
+      font-size: 1.2rem;
+      line-height: 0;
+      margin-left: 0.4rem;
+    }
+    input[type="text"],
+    input[type="email"] {
+      padding: 0.85rem 1.3rem;
+      font-size: 1rem;
+      border: 1.5px solid #d1d5db;
+      border-radius: 9999px;
+      background-color: #f9fafb;
+      color: #111827;
+      font-weight: 500;
+      width: 100%;
+      font-family: inherit;
+      box-shadow: inset 0 1px 2px rgb(0 0 0 / 0.05);
+      transition: border-color 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s cubic-bezier(0.4,0,0.2,1);
+      outline-offset: 2px;
+    }
+    input::placeholder {
+      color: #9ca3af;
+      text-shadow: 0 1px 0 rgba(255 255 255 / 0.7);
+      font-weight: 400;
+      font-style: normal;
+    }
+    input:focus {
+      border-color: #fb7185;
+      box-shadow: 0 0 6px 2px rgb(251 113 133 / 0.3);
+      background-color: #fff;
+      outline: none;
+    }
+    textarea {
+      width: 100%;
+      min-height: 140px;
+      resize: vertical;
+      padding: 0.85rem 1.3rem;
+      font-size: 1rem;
+      border: 1.5px solid #d1d5db;
+      border-radius: 1.25rem;
+      background-color: #f9fafb;
+      color: #111827;
+      font-weight: 500;
+      font-family: inherit;
+      box-shadow: inset 0 1px 2px rgb(0 0 0 / 0.05);
+      transition: border-color 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s cubic-bezier(0.4,0,0.2,1);
+      outline-offset: 2px;
+    }
+    textarea::placeholder {
+      color: #9ca3af;
+      text-shadow: 0 1px 0 rgba(255 255 255 / 0.7);
+      font-weight: 400;
+      font-style: normal;
+    }
+    textarea:focus {
+      border-color: #fb7185;
+      box-shadow: 0 0 6px 2px rgb(251 113 133 / 0.3);
+      background-color: #fff;
+      outline: none;
+    }
+    .submit-button {
+      align-self: flex-end;
+      background-color: #fb7185;
+      border: none;
+      color: white;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 0.85rem 2.4rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: background-color 0.3s cubic-bezier(0.4,0,0.2,1);
+      user-select: none;
+      font-family: inherit;
+      text-transform: lowercase;
+      letter-spacing: 0.02em;
+      box-shadow: 0 2px 8px rgb(251 113 133 / 0.35);
+      outline-offset: 2px;
+    }
+    .submit-button:hover,
+    .submit-button:focus-visible {
+      background-color: #f43f5e;
+      outline-offset: 3px;
+      outline: 3px solid #fbb6ce;
+      box-shadow: 0 4px 16px rgb(244 63 94 / 0.6);
+    }
+    .submit-button:focus {
+      outline: none;
+    }
+    .submit-button svg {
+      stroke: white;
+      stroke-width: 2;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+      width: 18px;
+      height: 18px;
+      transform: translateX(0);
+      transition: transform 0.3s ease;
+    }
+    .submit-button:hover svg {
+      transform: translateX(5px);
+    }
+    .error-message {
+      color: #dc2626;
+      font-size: 0.85rem;
+      margin-top: 0.25rem;
+      min-height: 1.2em;
+    }
+
+    /* Responsive: stack below 800px */
+    @media (max-width: 800px) {
+      .section {
+        grid-template-columns: 1fr;
+      }
+      .form-container {
+        width: 100%;
+        margin-top: 2rem;
+      }
+    }
+    
+    /* Footer styles */
+    footer {
+      background-color: #0D0F3C;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-content">
+    <section class="section" role="region" aria-labelledby="helpHeading">
+      <div class="text-content">
+        <h2 id="helpHeading">Lets talk business</h2>
+        <p>
+          Tell us more about what you're looking for. We'll get back to you within 24 hours. If you'd like to set up a meeting, click on our calendar below and book a time to meet online on Google Meet.
+        </p>
+      </div>
+      <aside class="form-container" role="form" aria-labelledby="contactFormTitle">
+        <h2 id="contactFormTitle" style="margin-top: 0; margin-bottom: 1.75rem; font-weight: 700; font-size: 1.5rem; color: #111827;">
+          Contact Us
+        </h2>
+        <form id="contactForm" novalidate>
+          <div>
+            <label for="name">
+              Name<span class="required-text">(required)</span>
+            </label>
+            <input id="name" name="name" type="text" placeholder="Your name" aria-required="true" aria-describedby="nameError" autocomplete="name" />
+            <span id="nameError" class="error-message" aria-live="polite"></span>
+          </div>
+          <div>
+            <label for="email">
+              Email<span class="required-text">(required)</span>
+            </label>
+            <input id="email" name="email" type="email" placeholder="Your email" aria-required="true" aria-describedby="emailError" autocomplete="email" />
+            <span id="emailError" class="error-message" aria-live="polite"></span>
+          </div>
+          <div>
+            <label for="company">
+              Company<span class="required-dot" aria-label="required">*</span>
+            </label>
+            <input id="company" name="company" type="text" placeholder="Your company" aria-describedby="companyError" autocomplete="organization" />
+            <span id="companyError" class="error-message" aria-live="polite"></span>
+          </div>
+          <div>
+            <label for="message">
+              Message
+            </label>
+            <textarea id="message" name="message" placeholder="Let us know how we can help" rows="5" aria-describedby="messageError"></textarea>
+            <span id="messageError" class="error-message" aria-live="polite"></span>
+          </div>
+          <a href="./index.html">
+          <button type="submit" class="submit-button" aria-label="Send message">
+            send
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </button>
+          </a>
+        </form>
+      </aside>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2025 The Hybrid Way. All rights reserved.
+  </footer>
+
+  <script>
+    const form = document.getElementById("contactForm");
+
+    const errors = {
+      name: "",
+      email: "",
+      company: ""
+    };
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      for (const key in errors) {
+        errors[key] = "";
+        document.getElementById(key + "Error").textContent = "";
+      }
+      let hasError = false;
+
+      const nameInput = form.name;
+      if (!nameInput.value.trim()) {
+        errors.name = "Name is required.";
+        hasError = true;
+      }
+
+      const emailInput = form.email;
+      if (!emailInput.value.trim()) {
+        errors.email = "Email is required.";
+        hasError = true;
+      } else if (!validateEmail(emailInput.value.trim())) {
+        errors.email = "Invalid email format.";
+        hasError = true;
+      }
+
+      Object.entries(errors).forEach(([key, message]) => {
+        if (message) {
+          document.getElementById(key + "Error").textContent = message;
+        }
+      });
+
+      if (!hasError) {
+        alert("Form submitted successfully!");
+        form.reset();
+      }
+    });
+
+    function validateEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+  </script>
+</body>
+</html>
